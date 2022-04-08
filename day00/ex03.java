@@ -12,21 +12,20 @@ public class ex03{
             String WeekDay = scanner.next();
             if (WeekDay.equals("42"))
                 break;
+            if (!(WeekDay.equals("Week")))
+                ExitError();
             int WeekNumInput = scanner.nextInt();
-            if (WeekNumInput != WeekNum) {
-                System.err.println("IllegalArgument");
-                System.exit(-1);
-            }
-            res = FindMinNum(res, scanner);
+            if (WeekNumInput != WeekNum)
+                ExitError();
+            if ((res = FindMinNum(res, scanner)) == -1)
+                ExitError();
         }
         PrintStatistic(res, WeekNum);
     }
 
-    public static void PrintStatistic(int res, int WeekNum)
-    {
-        int tmp;
-        int i = 1;
+    public static int MoveNum(int res){
         int num = 0;
+        int tmp;
 
         while (res != 0)
         {
@@ -34,7 +33,16 @@ public class ex03{
             res /= 10;
             num = (num * 10) + tmp;
         }
-        tmp = 0;
+        return (num);
+    }
+
+    public static void PrintStatistic(int res, int WeekNum)
+    {
+        int tmp = 0;
+        int i = 1;
+        int num = 0;
+
+        num = MoveNum(res);
         while (WeekNum > i)
         {
             tmp = num % 10;
@@ -57,10 +65,18 @@ public class ex03{
         for (int num = 0;num < 5; num++)
         {
             tmp = scanner.nextInt();
+            if (tmp < 1 || tmp > 9)
+                return (-1);
             if (tmp < min)
                 min = tmp;
         }
         res = (res * 10) + min;
         return (res);
+    }
+
+    public static void ExitError()
+    {
+        System.err.println("IllegalArgument");
+        System.exit(-1);
     }
 }
