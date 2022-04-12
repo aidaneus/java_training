@@ -2,14 +2,38 @@ import java.util.Scanner;
 
 public class ex04{
     public static void main(String[] args){
+        char[] symb = new char[65535];
+        int[] num = new int[65535];
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
         char[] words = input.toCharArray();
-        CountWords(words);
+        CountWords(symb, num, words);
+    }
+
+    private static void SortByApphabet(char[] symb, int[] num, int g)
+    {
+        int i;
+        int j = 0;
+        char [] char_tmp = new char[999];
+
+        for(int l = 0; l < g; l++){
+            i = 0;
+            while(i < g) {
+                if (num[l] == num[i]) {
+                    if (symb[l] < symb[i]) {
+                        char_tmp[j] = symb[l];
+                        symb[l] = symb[i];
+                        symb[i] = char_tmp[j];
+                        j++;
+                    }
+                }
+                i++;
+            }
+        }
     }
 
 private static void sort(char[] symb, int[] num, int g) {
-        int i = 0;
+        int i;
         int tmp = 0;
         int flag = 0;
         char[] symb_tmp = new char[999];
@@ -30,13 +54,15 @@ private static void sort(char[] symb, int[] num, int g) {
             symb[flag] = '\0';
             num[flag] = 0;
         }
+        symb = symb_tmp;
+        num = num_tmp;
+        SortByApphabet(symb, num, g);
+        for(int a = 0;a < g;a++)
+            System.out.println(symb[a]);
 }
 
-
-    public static void CountWords(char[] words)
+    public static void CountWords(char[] symb, int[] num, char[] words)
     {
-        char[] symb = new char[65535];
-        int[] num = new int[65535];
         int a = 0;
         int c = 0;
         boolean flag;
@@ -65,4 +91,3 @@ private static void sort(char[] symb, int[] num, int g) {
         sort(symb, num, c);
     }
 }
-
