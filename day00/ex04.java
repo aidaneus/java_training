@@ -2,15 +2,17 @@ import java.util.Scanner;
 
 public class ex04{
     public static void main(String[] args){
-        char[] symb = new char[65535];
-        int[] num = new int[65535];
+        char[] symb = new char[999];
+        int[] num = new int[999];
+        int i;
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
         char[] words = input.toCharArray();
-        CountWords(symb, num, words);
+        i = CountLetters(symb, num, words);
+        sort(symb, num, i);
     }
 
-    private static void SortByApphabet(char[] symb, int[] num, int g)
+   public static void SortByAlphabet(char[] symb, int[] num, int g)
     {
         int i;
         int j = 0;
@@ -32,7 +34,7 @@ public class ex04{
         }
     }
 
-private static void sort(char[] symb, int[] num, int g) {
+public static void sort(char[] symb, int[] num, int g) {
         int i;
         int tmp = 0;
         int flag = 0;
@@ -56,12 +58,12 @@ private static void sort(char[] symb, int[] num, int g) {
         }
         symb = symb_tmp;
         num = num_tmp;
-        SortByApphabet(symb, num, g);
+        SortByAlphabet(symb, num, g);
         for(int a = 0;a < g;a++)
             System.out.println(symb[a]);
 }
 
-    public static void CountWords(char[] symb, int[] num, char[] words)
+    public static int CountLetters(char[] symb, int[] num, char[] words)
     {
         int a = 0;
         int c = 0;
@@ -88,6 +90,6 @@ private static void sort(char[] symb, int[] num, int g) {
                 num[a] = num[a] + 1;
             }
         }
-        sort(symb, num, c);
+        return (c);
     }
 }
