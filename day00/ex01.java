@@ -7,8 +7,9 @@ public class ex01 {
         int exit_num = 0;
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
-        if (input <= 1)
+        if (input <= 1){
             exit_num = putIllegalArgument();
+        }
         else {
             for (int num = 2; num < input; num++) {
                 count++;
@@ -26,13 +27,11 @@ public class ex01 {
         System.exit(exit_num);
     }
 
-    private static int mySqrt(int input)
-    {
+    private static int mySqrt(int input){
         int start = 0;
         int res = 0;
 
-        while (res < input)
-        {
+        while (res < input){
             start++;
             res = start * start;
         }

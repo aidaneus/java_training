@@ -17,8 +17,7 @@ public class ex02{
         System.out.println("Count of coffee-request - " + coffee_request);
     }
 
-    public static int IsSum(int input)
-    {
+    public static int IsSum(int input){
         int res = 0;
         int mid = 0;
 
@@ -30,7 +29,7 @@ public class ex02{
         return(res);
     }
 
-    public static int IsPrime(int sum) {
+    public static int IsPrime(int sum){
             for (int num = 2; num < sum; num++) {
                 if (sum % num == 0)
                     return(0);

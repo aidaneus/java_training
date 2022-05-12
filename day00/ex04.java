@@ -12,17 +12,16 @@ public class ex04{
         sort(symb, num, i);
     }
 
-   public static void SortByAlphabet(char[] symb, int[] num, int g)
-    {
+   public static void SortByAlphabet(char[] symb, int[] num, int g){
         int i;
         int j = 0;
         char [] char_tmp = new char[999];
 
         for(int l = 0; l < g; l++){
             i = 0;
-            while(i < g) {
+            while(i < g){
                 if (num[l] == num[i]) {
-                    if (symb[l] < symb[i]) {
+                    if (symb[l] < symb[i]){
                         char_tmp[j] = symb[l];
                         symb[l] = symb[i];
                         symb[i] = char_tmp[j];
@@ -34,17 +33,17 @@ public class ex04{
         }
     }
 
-public static void sort(char[] symb, int[] num, int g) {
+public static void sort(char[] symb, int[] num, int g){
         int i;
         int tmp = 0;
         int flag = 0;
         char[] symb_tmp = new char[999];
         int[] num_tmp = new int[999];
 
-        for (int a = 0; a < g; a++) {
+        for (int a = 0; a < g; a++){
             i = 0;
             tmp = 0;
-            while (i < g) {
+            while (i < g){
                 if (num[i] > tmp) {
                     tmp = num[i];
                     flag = i;
@@ -63,13 +62,11 @@ public static void sort(char[] symb, int[] num, int g) {
             System.out.println(symb[a]);
 }
 
-    public static int CountLetters(char[] symb, int[] num, char[] words)
-    {
+    public static int CountLetters(char[] symb, int[] num, char[] words){
         int a = 0;
         int c = 0;
         boolean flag;
-        for (char i : words)
-        {
+        for (char i : words){
             a = 0;
             flag = false;
             if (!Character.isAlphabetic(i)) {
