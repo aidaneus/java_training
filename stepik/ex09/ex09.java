@@ -1,17 +1,17 @@
 public class ex09 {
 	public static void main(String[] args) {
-		String [] roles= {
-				"Городничий","Аммос Федорович",
-				"Артемий Филиппович",
-				"Лука Лукич"};
-		String [] textLines={
-				"Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
-				"Аммос Федорович: Как ревизор?",
-				"Артемий Филиппович: Как ревизор?",
-				"Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
-				"Аммос Федорович: Вот те на!",
-				"Артемий Филиппович: Вот не было заботы, так подай!",
-				"Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
+		String [] roles = {
+				"Gorodnichij","Ammos Fedorovich",
+				"Artemij Filippovich",
+				"Luka Lukich"};
+		String [] textLines ={
+				"Gorodnichij: Ja priglasil vas, gospoda, s tem, chtoby soobshhit' vam preneprijatnoe izvestie: k nam edet revizor.",
+				"Ammos Fedorovich: Kak revizor?",
+				"Artemij Filippovich: Kak revizor?",
+				"Gorodnichij: Revizor iz Peterburga, inkognito. I eshhe s sekretnym predpisan'em.",
+				"Ammos Fedorovich: Vot te na!",
+				"Artemij Filippovich: Vot ne bylo zaboty, tak podaj!",
+				"Luka Lukich: Gospodi bozhe! eshhe i s sekretnym predpisan'em!"};
 		String res = printTextPerRole(roles,textLines);
 		System.out.println(res);
 	}
