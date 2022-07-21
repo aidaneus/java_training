@@ -1,7 +1,7 @@
 import java.math.*;
 import java.util.Arrays;
 
-public class module2 {
+public class ex10 {
 	public static void main(String[] args) {
 		Robot robot = new Robot(0,0, Direction.DOWN);
 		moveRobot(robot, -10, 20);
