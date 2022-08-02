@@ -15,6 +15,15 @@ public class ex16 {
 		System.out.println(getCallerClassAndMethodName());
 	}
 
+//	public static void main(String[] args) {
+//		System.out.println(getCallerClassAndMethodName());
+//		anotherMethod();
+//	}
+//
+//	private static void anotherMethod() {
+//		System.out.println(getCallerClassAndMethodName());
+//	}
+
 	public static String getCallerClassAndMethodName() {
 		try {
 			StackTraceElement element = new Throwable().getStackTrace()[2];
